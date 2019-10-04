@@ -24,7 +24,6 @@ client.on('message', message => { // اقتراح
         }).catch(e => console.error(e)
         )
     }
-}
-});   
+});
 
 client.login(process.env.BOT_TOKEN);
