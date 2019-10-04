@@ -9,7 +9,7 @@ client.on('message', message => { // اقتراح
         if (!message.guild) return message.reply('**:x: This Commands Just In Server**').then(v => {v.react('❌')})
         var args =  message.content.split(' ').slice(1).join(' ')
         if (!args) return message.reply('Type You Suggestion').then(c => {c.delete(5000)})
-        let Room = message.guild.channels.find(`name`, "🍂》suggestions0")
+        let Room = message.guild.channels.find(`name`, "🍂》suggestions")
         if (!Room) return message.channel.send("Can't find suggestions channel.").then(d => d.react('❌'))
         let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -25,6 +25,9 @@ client.on('message', message => { // اقتراح
         )
     }
 });
+
+client.on("message", message => { // تقديم اداره
+  if(message.content.startsWith("$apply")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
         let channel = message.guild.channels.find("name", "apply-for-staff")
